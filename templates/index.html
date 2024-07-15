@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+<form  method = "post" class="mb-3 shadow">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="name"><b>name</b></label>
+    <input type="text" class="form-control" name="name" id="name" required><br>
+  </div>
+  <div>
+    <label for="priority"><b>priority</b></label>
+    <input type="text" class="form-control" name="priority" id="priority" required><br>
+  </div>
+  <div>
+     <label for="date"><b>date</b></label>
+    <input type="date" class="form-control" name="date" id="date" required><br>
+  </div>
+    <button type="submit" >submit</button>
+</form>
+    </div>
+        <div class="col-md-6" style="padding: 3rem; border: 3px solid #ddd; border-radius: 10px;">
+            <h4>Tasks to be Completed</h4>
+            {% if task1 %}
+                <ul style="list-style: none; padding: 5;">
+                 {% for task in task1 %}
+                    <li style="margin-bottom: 5px;">
+                     {{ task.name }} - {{ task.priority }} (Due: {{ task.date }})
+                      <a href="{% url 'update' task.id %}">
+                          <input type="button"  class="w3-button w3-green" value="update">
+                      </a>
+                        <a href="{% url 'delete' task.id %}">
+                         <input type="button" class="w3-button w3-red" value="delete">
+                        </a>
+                    </li>
+                 {% endfor %}
+                 </ul>
+            {% else %}
+                <p style="text-align: center;">No tasks yet.</p>
+             {% endif %}
+         </div>
+  </div>
+</div>
+{% endblock %}

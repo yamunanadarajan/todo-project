@@ -1,0 +1,56 @@
+.banner{
+    background-color: pink;
+    width : 100%;
+    height : 200px;
+    margin-bottom:50px;
+}
+.task-list { /* Style the unordered list (ul) */
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.task-list li { /* Style each list item (li) */
+  display: flex; /* Allow horizontal alignment of content */
+  justify-content: space-between; /* Distribute content horizontally with space between */
+  align-items: center; /* Align content vertically in the center */
+  padding: 10px; /* Add padding for readability */
+  border-bottom: 1px solid #ddd; /* Add a subtle border between tasks */
+}
+
+.task-name { /* Style the task name */
+  font-weight: bold; /* Make the name bold for emphasis */
+}
+
+.task-priority { /* Style the task priority */
+  color: #f00; /* Red color for priorities (adjust as needed) */
+}
+
+.task-due-date { /* Style the task due date */
+  font-style: italic; /* Italicize the due date for distinction */
+}
+
+.tasks-container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.tasks-container h4 {
+  margin-bottom: 1rem;
+}
+
+.tasks-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tasks-container ul li {
+  margin-bottom: 5px;
+}
+
+.tasks-container p {
+  text-align: center;
+}
+
+.w3-button {width:150px;}
